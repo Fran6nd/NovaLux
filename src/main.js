@@ -7,18 +7,19 @@ let win
 function createWindow () {
   // Créer le browser window.
   win = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 74*5,
+    height: 120*5,
+    frame:false,
     webPreferences: {
       nodeIntegration: true
     }
   })
 
+  // For production only!
+  //win.setFullScreen(true);
+
   // and load the index.html of the app.
   win.loadFile('src/views/index.html')
-
-  // Ouvre les DevTools.
-  win.webContents.openDevTools()
 
   // Émit lorsque la fenêtre est fermée.
   win.on('closed', () => {
