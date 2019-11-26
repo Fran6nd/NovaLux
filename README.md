@@ -1,5 +1,10 @@
 # NovaLux
 
+## Running the project
+
+First run `npm install`.
+You should run the project by using the following command: `npm start`.
+
 ## How to commit
 All commits should follow this format:
 `{place}:{what}.`
