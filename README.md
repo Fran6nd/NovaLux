@@ -8,6 +8,8 @@ Example:
 
 ## Coding rules
 
+All files should be runnable directly via Node... in order to run tests.
+
 About the naming: We are following camelCase. It means that for variables, instances we name as follow:
 `testApp`
 `myCounter`
