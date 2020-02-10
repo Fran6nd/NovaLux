@@ -40,8 +40,8 @@ function discover() {
   socket.bind(8888, function() {
     socket.setBroadcast(true);
   });
-  let t = new Date().getTime();
-  //while (new Date().getTime() - t < 3000) {}
-  //socket.close();
+  setTimeout(function() {
+    socket.close();
+  }, 3000);
 }
 module.exports = discover;
