@@ -40,12 +40,7 @@ function discover() {
 
 
 
-  socket.bind(8888);
-
-  let t = new Date().getTime();
-  while (new Date().getTime() - t < 4000){
-  }
-  socket.close();
+    socket.bind(8888, function() {socket.setBroadcast(true)});
   //socket.close();
 
 }
