@@ -32,16 +32,16 @@ function discover() {
   socket.on("listening", function() {
     socket.setBroadcast(true);
     socket.send(packet, 0, packet.length, 9999, "255.255.255.255");
-    
   });
-  socket.on("message", function (message, rinfo) {
+  socket.on("message", function(message, rinfo) {
     console.log(tplink.decrypt(message).toString());
-    });
+  });
 
-
-
-    socket.bind(8888, function() {socket.setBroadcast(true)});
+  socket.bind(8888, function() {
+    socket.setBroadcast(true);
+  });
+  let t = new Date().getTime();
+  //while (new Date().getTime() - t < 3000) {}
   //socket.close();
-
 }
 module.exports = discover;
