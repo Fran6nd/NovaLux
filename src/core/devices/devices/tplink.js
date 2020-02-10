@@ -35,7 +35,7 @@ function discover() {
     
   });
   socket.on("message", function (message, rinfo) {
-    console.log(tplink.decrypt(message));
+    console.log(tplink.decrypt(message).toString());
     });
 
 
