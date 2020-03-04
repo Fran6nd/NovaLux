@@ -24,9 +24,9 @@ Then setup a virtual environnement (Facultative but recommended):<br>
 * To exite use `deactivate`.
 
 <br>
-Once activated, we will need to install:<br>
+Once activated, we will need to install the requirements:<br>
 
-* `python3 -m pip install autopep8`.
+* `pip3 install -r requirements.txt`.
 
 <br>
 
