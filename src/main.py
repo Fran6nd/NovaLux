@@ -1,16 +1,30 @@
 #!/usr/bin/env python3
-import kivy
-kivy.require('1.0.6') # replace with your current kivy version !
+from kivy.uix.behaviors.button import ButtonBehavior
+from kivy.uix.widget import Widget
+from kivy.lang import Builder
+from kivy.vector import Vector
 
-from kivy.app import App
-from kivy.uix.label import Label
+
+KV = '''
+<CircularButton>:
+    canvas:
+        Ellipse:
+            pos: self.pos
+            size: self.size
+'''
+
+Builder.load_string(KV)
 
 
-class MyApp(App):
-
-    def build(self):
-        return Label(text='Hello world')
+class CircularButton(ButtonBehavior, Widget):
+    def collide_point(self, x, y):
+        return Vector(x, y).distance(self.center) <= self.width / 2
 
 
 if __name__ == '__main__':
-    MyApp().run()
+    from kivy.base import runTouchApp
+
+def callback(*args):
+        print("i'm being pressed")
+
+runTouchApp(CircularButton(on_press=callback))
