@@ -5,13 +5,16 @@ from kivy.lang import Builder
 from kivy.vector import Vector
 
 
-KV = '''
+KV = """
 <CircularButton>:
+    size: (min(self.width,self.height),min(self.width,self.height)) # force circle
     canvas:
+        Color:
+            rgba: ((1,0,0,1) if self.state == "normal" else (.5,0,0,1))
         Ellipse:
             pos: self.pos
             size: self.size
-'''
+"""
 
 Builder.load_string(KV)
 
