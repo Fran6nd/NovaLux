@@ -27,7 +27,7 @@ class CircularButton(ButtonBehavior, Widget):
 if __name__ == '__main__':
     from kivy.base import runTouchApp
 
-def callback(*args):
+    def callback(*args):
         print("i'm being pressed")
 
-runTouchApp(CircularButton(on_press=callback))
+    runTouchApp(CircularButton(on_press=callback))
