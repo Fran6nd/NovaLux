@@ -23,6 +23,9 @@ Then setup a virtual environnement (Facultative but recommended):<br>
 * Activate it: `source env/bin/activate`.
 * To exite use `deactivate`.
 
+
+rtrergdfgdfgerdgrerdg
+
 <br>
 Once activated, we will need to install the requirements:<br>
 
