@@ -27,6 +27,10 @@ Then setup a virtual environnement (Facultative but recommended):<br>
 Once activated, we will need to install the requirements:<br>
 
 * `pip3 install -r requirements.txt`.
+Ìf running in the Windows Subsystem for Linux:
+* Install xming on windows: https://sourceforge.net/projects/xming/
+* add `export DISPLAY=:0 ` to your `~/.bashrc`
+* `pip3 install git+https://github.com/kivy/kivy.git@master`
 
 <br>
 
