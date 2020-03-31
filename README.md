@@ -37,7 +37,7 @@ Once activated, we will need to install the requirements:<br>
 
 Finally run it!<br>
 
-* `./main.py`
+* `./src/main.py`
 
 # Contributing
 
@@ -53,7 +53,7 @@ Just a few rules:<br>
 All commits should follow this format:
 `{place}:{what}.`
 Example:
-`project/test.js: Added unit tests.`
+`project/test.py: Added unit tests.`
 
 ## Coding rules
 
