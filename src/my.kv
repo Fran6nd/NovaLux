@@ -31,9 +31,9 @@ MyScreenManager:
                 print("change config screen")
 <Configuration>:
     name:"configScreen"
-    AnchorLayout:
-        anchor_x:"center"
-        anchor_y:"top"
+    GridLayout:
+        cols : 1
+        rows :5
         Button:
             size_hint: 0.8, None
             text:"back"
@@ -41,5 +41,37 @@ MyScreenManager:
             background_normal: './graphic/Button/btBlue.png'
             background_down: './graphic/Button/btBluecl.png'
             on_release: root.manager.current = "mainScreen"
+
+        Button:
+            size_hint: 0.8, None
+            text:"Info"
+            #markup: True
+            background_normal: './graphic/Button/btBlue.png'
+            background_down: './graphic/Button/btBluecl.png'
+            on_release: root.manager.current = "mainScreen"
+
+        Button:
+            size_hint: 0.8, None
+            text:"Wifi settings"
+            #markup: True
+            background_normal: './graphic/Button/btBlue.png'
+            background_down: './graphic/Button/btBluecl.png'
+            on_release: root.manager.current = "mainScreen"
+
+        Button:
+            size_hint: 0.8, None
+            text:"Devices managements"
+            #markup: True
+            background_normal: './graphic/Button/btBlue.png'
+            background_down: './graphic/Button/btBluecl.png'
+            on_release: root.manager.current = "mainScreen"
+
+        Button:
+            size_hint: 0.8, None
+            text:"Add another Viridilux"
+            #markup: True
+            background_normal: './graphic/Button/btBlue.png'
+            background_down: './graphic/Button/btBluecl.png'
+            on_release: root.manager.current = "mainScreen"       
 
               

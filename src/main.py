@@ -4,6 +4,7 @@ from kivy.app import App
 from kivy.core.window import Window
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.anchorlayout import AnchorLayout
+from kivy.uix.gridlayout import GridLayout
 from kivy.graphics import Rectangle, Color
 from kivy.uix.screenmanager import ScreenManager, Screen
 class MyLayout(AnchorLayout, Screen):
@@ -11,7 +12,7 @@ class MyLayout(AnchorLayout, Screen):
         print("texttttte")
     pass
 
-class Configuration(AnchorLayout ,Screen):
+class Configuration(BoxLayout ,Screen):
     pass
 
 class MyScreenManager(ScreenManager):
