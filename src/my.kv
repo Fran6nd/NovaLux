@@ -1,6 +1,11 @@
 MyScreenManager:
     MyLayout:
     Configuration:
+    Information:
+    Wifi:
+    AddWifi:
+
+
 
 <MyLayout>: # no need to import stuff in kv!
     name:"mainScreen"
@@ -29,49 +34,131 @@ MyScreenManager:
             on_release: 
                 root.manager.current ="configScreen"
                 print("change config screen")
+
+                
 <Configuration>:
     name:"configScreen"
-    GridLayout:
-        cols : 1
-        rows :5
-        Button:
-            size_hint: 0.8, None
-            text:"back"
-            #markup: True
-            background_normal: './graphic/Button/btBlue.png'
-            background_down: './graphic/Button/btBluecl.png'
-            on_release: root.manager.current = "mainScreen"
+    cols : 1
+    rows : 5
+    Button:
+        size_hint: 0.8, None
+        text:"back"
+        #markup: True
+        background_normal: './graphic/Button/btBlue.png'
+        background_down: './graphic/Button/btBluecl.png'
+        on_release: root.manager.current = "mainScreen"
 
-        Button:
-            size_hint: 0.8, None
-            text:"Info"
-            #markup: True
-            background_normal: './graphic/Button/btBlue.png'
-            background_down: './graphic/Button/btBluecl.png'
-            on_release: root.manager.current = "mainScreen"
+    Button:
+        size_hint: 0.8, None
+        text:"Info"
+        #markup: True
+        background_normal: './graphic/Button/btBlue.png'
+        background_down: './graphic/Button/btBluecl.png'
+        on_release: root.manager.current = "InfoScreen"
 
-        Button:
-            size_hint: 0.8, None
-            text:"Wifi settings"
-            #markup: True
-            background_normal: './graphic/Button/btBlue.png'
-            background_down: './graphic/Button/btBluecl.png'
-            on_release: root.manager.current = "mainScreen"
+    Button:
+        size_hint: 0.8, None
+        text:"Wifi settings"
+        #markup: True
+        background_normal: './graphic/Button/btBlue.png'
+        background_down: './graphic/Button/btBluecl.png'
+        on_release: root.manager.current = "WifiScreen"
 
-        Button:
-            size_hint: 0.8, None
-            text:"Devices managements"
-            #markup: True
-            background_normal: './graphic/Button/btBlue.png'
-            background_down: './graphic/Button/btBluecl.png'
-            on_release: root.manager.current = "mainScreen"
+    Button:
+        size_hint: 0.8, None
+        text:"Devices managements"
+        #markup: True
+        background_normal: './graphic/Button/btBlue.png'
+        background_down: './graphic/Button/btBluecl.png'
+        on_release: root.manager.current = "mainScreen"
 
-        Button:
-            size_hint: 0.8, None
-            text:"Add another Viridilux"
-            #markup: True
-            background_normal: './graphic/Button/btBlue.png'
-            background_down: './graphic/Button/btBluecl.png'
-            on_release: root.manager.current = "mainScreen"       
+    Button:
+        size_hint: 0.8, None
+        text:"Add another Viridilux"
+        #markup: True
+        background_normal: './graphic/Button/btBlue.png'
+        background_down: './graphic/Button/btBluecl.png'
+        on_release: root.manager.current = "mainScreen"    
 
-              
+<Information>:
+    name:"InfoScreen"
+    cols : 1
+    rows :5
+    Button:
+        size_hint: 0.8, None
+        text:"back"
+        #markup: True
+        background_normal: './graphic/Button/btBlue.png'
+        background_down: './graphic/Button/btBluecl.png'
+        on_release: root.manager.current = "configScreen"
+
+    Label:
+        size_hint: 0.8, None
+        text:"IP :"
+        #markup: True
+        background_normal: './graphic/Button/btBlue.png'
+        
+    Label:
+        size_hint: 0.8, None
+        text:"MAC :"
+        #markup: True
+        background_normal: './graphic/Button/btBlue.png'
+        
+
+    Label:
+        size_hint: 0.8, None
+        text:"Software :"
+        #markup: True
+        background_normal: './graphic/Button/btBlue.png'
+        
+
+    Button:
+        size_hint: 0.8, None
+        text:"Check update"
+        #markup: True
+        background_normal: './graphic/Button/btBlue.png'
+        background_down: './graphic/Button/btBluecl.png'
+        #on_release: root.manager.current = "mainScreen" #faire une ref a une class update
+
+
+<Wifi>:
+    name:"WifiScreen"
+    cols : 1
+    rows :5
+    Button:
+        size_hint: 0.8, None
+        text:"back"
+        #markup: True
+        background_normal: './graphic/Button/btBlue.png'
+        background_down: './graphic/Button/btBluecl.png'
+        on_release: root.manager.current = "configScreen"
+    Label:
+        size_hint: 0.8, None
+        text:"Connected to :"  
+        
+    Button:
+        size_hint: 0.8, None
+        text:"Add Wifi"
+        #markup: True
+        background_normal: './graphic/Button/btBlue.png'
+        background_down: './graphic/Button/btBluecl.png'
+        on_release: root.manager.current = "AddWifiScreen"
+
+<AddWifi>:
+    name:"AddWifiScreen"
+    cols : 1
+    rows :4
+    Button:
+        size_hint: 0.8, None
+        text:"back"
+        #markup: True
+        background_normal: './graphic/Button/btBlue.png'
+        background_down: './graphic/Button/btBluecl.png'
+        on_release: root.manager.current = "WifiScreen"
+    Button:
+        size_hint: 0.8, None
+        text:"Search"
+        background_normal: './graphic/Button/btBlue.png'
+        background_down: './graphic/Button/btBluecl.png'
+    Label:
+        text:"Liste des wifi dispo"

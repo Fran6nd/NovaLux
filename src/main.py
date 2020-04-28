@@ -12,24 +12,29 @@ class MyLayout(AnchorLayout, Screen):
         print("texttttte")
     pass
 
-class Configuration(BoxLayout ,Screen):
+class Configuration(GridLayout ,AnchorLayout,Screen):
+    pass
+
+class Information(GridLayout,Screen):
+    pass
+class Wifi(GridLayout,Screen):
+    pass
+
+class AddWifi(GridLayout,Screen):
     pass
 
 class MyScreenManager(ScreenManager):
     pass
-
-
-
 class myApp(App):  
 #the kv file name will be Tutorial (name is before the "App")
     def build(self):
         Window.size=(480,800)# taille de l'ecran
-        #return MyLayout()
-        #return Configuration()
         screen_manager= ScreenManager()
         screen_manager.add_widget(MyLayout(name ="mainScreen"))
         screen_manager.add_widget(Configuration(name="configScreen"))
-        #return screen_manager
+        screen_manager.add_widget(Information(name="InfoScreen"))
+        screen_manager.add_widget(Wifi(name="WifiScreen"))
+        screen_manager.add_widget(AddWifi(name="AddWifiScreen"))
 
 if __name__ == '__main__':
     myApp().run()
