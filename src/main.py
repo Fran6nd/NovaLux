@@ -1,33 +1,34 @@
-#!/usr/bin/env python3
-from kivy.uix.behaviors.button import ButtonBehavior
-from kivy.uix.widget import Widget
-from kivy.lang import Builder
-from kivy.vector import Vector
+#!/usr/bin/env python
+import kivy
+from kivy.app import App
+from kivy.core.window import Window
+from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.anchorlayout import AnchorLayout
+from kivy.graphics import Rectangle, Color
+from kivy.uix.screenmanager import ScreenManager, Screen
+class MyLayout(AnchorLayout, Screen):
+    def checkLamp():
+        print("texttttte")
+    pass
+
+class Configuration(AnchorLayout ,Screen):
+    pass
+
+class MyScreenManager(ScreenManager):
+    pass
 
 
-KV = """
-<CircularButton>:
-    size: (min(self.width,self.height),min(self.width,self.height)) # force circle
-    canvas:
-        Color:
-            rgba: ((1,0,0,1) if self.state == "normal" else (.5,0,0,1))
-        Ellipse:
-            pos: self.pos
-            size: self.size
-"""
 
-Builder.load_string(KV)
-
-
-class CircularButton(ButtonBehavior, Widget):
-    def collide_point(self, x, y):
-        return Vector(x, y).distance(self.center) <= self.width / 2
-
+class myApp(App):  
+#the kv file name will be Tutorial (name is before the "App")
+    def build(self):
+        Window.size=(480,800)# taille de l'ecran
+        #return MyLayout()
+        #return Configuration()
+        screen_manager= ScreenManager()
+        screen_manager.add_widget(MyLayout(name ="mainScreen"))
+        screen_manager.add_widget(Configuration(name="configScreen"))
+        #return screen_manager
 
 if __name__ == '__main__':
-    from kivy.base import runTouchApp
-
-    def callback(*args):
-        print("i'm being pressed")
-
-    runTouchApp(CircularButton(on_press=callback))
+    myApp().run()

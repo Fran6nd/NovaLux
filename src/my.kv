@@ -1,0 +1,45 @@
+MyScreenManager:
+    MyLayout:
+    Configuration:
+
+<MyLayout>: # no need to import stuff in kv!
+    name:"mainScreen"
+    AnchorLayout:
+        anchor_x:"center"
+        anchor_y:"center"
+        Button:
+            text:"5 lampes allumés"
+            #id: "checkLamp"
+            background_normal: './graphic/Button/checkLamp.png'
+            background_down: './graphic/Button/checkLampcl.png'
+            #size: 100, 100 
+            size_hint: 0.6 , 0.6 #définit la taille d'un widget comme une fraction de la taille des parents.
+            #on_press: checkLamp
+    AnchorLayout:
+        anchor_x:"center"
+        anchor_y:"top"
+        Button:
+            text:"configuration"
+            #markup: True
+            background_normal: './graphic/Button/btBlue.png'
+            background_down: './graphic/Button/btBluecl.png'
+           # border: 60,60,60,60
+           # size: 100, 100
+            size_hint: 0.8, None
+            on_release: 
+                root.manager.current ="configScreen"
+                print("change config screen")
+<Configuration>:
+    name:"configScreen"
+    AnchorLayout:
+        anchor_x:"center"
+        anchor_y:"top"
+        Button:
+            size_hint: 0.8, None
+            text:"back"
+            #markup: True
+            background_normal: './graphic/Button/btBlue.png'
+            background_down: './graphic/Button/btBluecl.png'
+            on_release: root.manager.current = "mainScreen"
+
+              
