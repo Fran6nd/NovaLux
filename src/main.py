@@ -25,6 +25,13 @@ class AddWifi(GridLayout,Screen):
 
 class MyScreenManager(ScreenManager):
     pass
+
+class DeviceManager(GridLayout, Screen):
+    pass
+
+class AddVirilux(GridLayout, Screen):
+    pass
+
 class myApp(App):  
 #the kv file name will be Tutorial (name is before the "App")
     def build(self):
@@ -35,6 +42,8 @@ class myApp(App):
         screen_manager.add_widget(Information(name="InfoScreen"))
         screen_manager.add_widget(Wifi(name="WifiScreen"))
         screen_manager.add_widget(AddWifi(name="AddWifiScreen"))
-
+        screen_manager.add_widget(DeviceManager(name="DeviceManageScreen"))
+        screen_manager.add_widget(AddVirilux(name="AddViriluxScreen"))
 if __name__ == '__main__':
     myApp().run()
+

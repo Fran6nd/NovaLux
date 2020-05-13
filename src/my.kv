@@ -4,6 +4,8 @@ MyScreenManager:
     Information:
     Wifi:
     AddWifi:
+    DeviceManager:
+    AddVirilux:
 
 
 
@@ -70,7 +72,7 @@ MyScreenManager:
         #markup: True
         background_normal: './graphic/Button/btBlue.png'
         background_down: './graphic/Button/btBluecl.png'
-        on_release: root.manager.current = "mainScreen"
+        on_release: root.manager.current = "DeviceManageScreen"
 
     Button:
         size_hint: 0.8, None
@@ -78,7 +80,7 @@ MyScreenManager:
         #markup: True
         background_normal: './graphic/Button/btBlue.png'
         background_down: './graphic/Button/btBluecl.png'
-        on_release: root.manager.current = "mainScreen"    
+        on_release: root.manager.current = "AddViriluxScreen"    
 
 <Information>:
     name:"InfoScreen"
@@ -162,3 +164,68 @@ MyScreenManager:
         background_down: './graphic/Button/btBluecl.png'
     Label:
         text:"Liste des wifi dispo"
+
+<DeviceManager>:
+    name:"DeviceManageScreen"
+    cols : 1
+    rows :4
+    Button:
+        size_hint: 0.8, None
+        text:"back"
+        #markup: True
+        background_normal: './graphic/Button/btBlue.png'
+        background_down: './graphic/Button/btBluecl.png'
+        on_release: root.manager.current = "configScreen"
+    Button:
+        size_hint: 0.8, None
+        text:"Add devices"
+        background_normal: './graphic/Button/btBlue.png'
+        background_down: './graphic/Button/btBluecl.png'
+
+    Button:
+        size_hint: 0.8, None
+        text:"Removes devices"
+        background_normal: './graphic/Button/btBlue.png'
+        background_down: './graphic/Button/btBluecl.png'
+
+    Button:
+        size_hint: 0.8, None
+        text:"Action on shutdown"
+        background_normal: './graphic/Button/btBlue.png'
+        background_down: './graphic/Button/btBluecl.png'
+
+
+<AddVirilux>:
+    name:"AddViriluxScreen"
+    cols : 1
+    rows :5
+    Button:
+        size_hint: 0.8, None
+        text:"back"
+        #markup: True
+        background_normal: './graphic/Button/btBlue.png'
+        background_down: './graphic/Button/btBluecl.png'
+        on_release: root.manager.current = "configScreen"
+    Button:
+        size_hint: 0.8, None
+        text:"Wich brand"
+        background_normal: './graphic/Button/btBlue.png'
+        background_down: './graphic/Button/btBluecl.png'
+
+    Button:
+        size_hint: 0.8, None
+        text:"TP-Link"
+        background_normal: './graphic/Button/btBlue.png'
+        background_down: './graphic/Button/btBluecl.png'
+
+    Button:
+        size_hint: 0.8, None
+        text:"Wemos"
+        background_normal: './graphic/Button/btBlue.png'
+        background_down: './graphic/Button/btBluecl.png'
+        
+    Button:
+        size_hint: 0.8, None
+        text:"LiFx"
+        background_normal: './graphic/Button/btBlue.png'
+        background_down: './graphic/Button/btBluecl.png'
