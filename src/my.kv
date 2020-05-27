@@ -6,7 +6,7 @@ MyScreenManager:
     AddWifi:
     DeviceManager:
     AddVirilux:
-
+    AddDevice:
 
 
 <MyLayout>: # no need to import stuff in kv!
@@ -149,7 +149,7 @@ MyScreenManager:
 <AddWifi>:
     name:"AddWifiScreen"
     cols : 1
-    rows :4
+    rows :5
     Button:
         size_hint: 0.8, None
         text:"back"
@@ -162,6 +162,8 @@ MyScreenManager:
         text:"Search"
         background_normal: './graphic/Button/btBlue.png'
         background_down: './graphic/Button/btBluecl.png'
+        on_release: root.checkWifi()
+
     Label:
         text:"Liste des wifi dispo"
 
@@ -181,6 +183,7 @@ MyScreenManager:
         text:"Add devices"
         background_normal: './graphic/Button/btBlue.png'
         background_down: './graphic/Button/btBluecl.png'
+        on_release: root.manager.current ="AddDeviceScreen"
 
     Button:
         size_hint: 0.8, None
@@ -195,22 +198,22 @@ MyScreenManager:
         background_down: './graphic/Button/btBluecl.png'
 
 
-<AddVirilux>:
-    name:"AddViriluxScreen"
-    cols : 1
-    rows :5
+
+<AddDevice>:
+    name:"AddDeviceScreen"
+    cols: 1
+    rows: 5
+
     Button:
         size_hint: 0.8, None
         text:"back"
         #markup: True
         background_normal: './graphic/Button/btBlue.png'
         background_down: './graphic/Button/btBluecl.png'
-        on_release: root.manager.current = "configScreen"
-    Button:
+        on_release: root.manager.current = "DeviceManageScreen"
+    Label:
         size_hint: 0.8, None
-        text:"Wich brand"
-        background_normal: './graphic/Button/btBlue.png'
-        background_down: './graphic/Button/btBluecl.png'
+        text:"Wich brand ?"
 
     Button:
         size_hint: 0.8, None
@@ -229,3 +232,23 @@ MyScreenManager:
         text:"LiFx"
         background_normal: './graphic/Button/btBlue.png'
         background_down: './graphic/Button/btBluecl.png'
+
+
+
+<AddVirilux>:
+    name:"AddViriluxScreen"
+    cols : 1
+    rows :3
+    Button:
+        size_hint: 0.8, None
+        text:"back"
+        #markup: True
+        background_normal: './graphic/Button/btBlue.png'
+        background_down: './graphic/Button/btBluecl.png'
+        on_release: root.manager.current = "configScreen"
+    Button:
+        size_hint: 0.8, None
+        text:"Search"
+        background_normal: './graphic/Button/btBlue.png'
+        background_down: './graphic/Button/btBluecl.png'
+
