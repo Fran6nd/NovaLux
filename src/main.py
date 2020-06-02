@@ -8,7 +8,7 @@ from kivy.uix.gridlayout import GridLayout
 from kivy.graphics import Rectangle, Color
 from kivy.uix.screenmanager import ScreenManager, Screen
 class MyLayout(AnchorLayout, Screen):
-    def checkLamp():
+    def checkLamp(self):
         print("test print")
     pass
 

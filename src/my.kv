@@ -21,7 +21,7 @@ MyScreenManager:
             background_down: './graphic/Button/checkLampcl.png'
             #size: 100, 100 
             size_hint: 0.6 , 0.6 #définit la taille d'un widget comme une fraction de la taille des parents.
-            #on_press: checkLamp
+            on_release: root.checkLamp()
     AnchorLayout:
         anchor_x:"center"
         anchor_y:"top"
