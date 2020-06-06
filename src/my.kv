@@ -7,7 +7,8 @@ MyScreenManager:
     DeviceManager:
     AddVirilux:
     AddDevice:
-
+    RemoveDevices:
+    ConfigureDevices:
 
 <MyLayout>: # no need to import stuff in kv!
     name:"mainScreen"
@@ -170,7 +171,7 @@ MyScreenManager:
 <DeviceManager>:
     name:"DeviceManageScreen"
     cols : 1
-    rows :4
+    rows : 5
     Button:
         size_hint: 0.8, None
         text:"back"
@@ -190,14 +191,19 @@ MyScreenManager:
         text:"Removes devices"
         background_normal: './graphic/Button/btBlue.png'
         background_down: './graphic/Button/btBluecl.png'
+        on_release: root.manager.current="RemoveDevicesScreen"
 
     Button:
         size_hint: 0.8, None
-        text:"Action on shutdown"
+        text:"Light up or off"
         background_normal: './graphic/Button/btBlue.png'
         background_down: './graphic/Button/btBluecl.png'
-
-
+    Button:
+        size_hint: 0.8, None
+        text:"Configure devices"
+        background_normal: './graphic/Button/btBlue.png'
+        background_down: './graphic/Button/btBluecl.png'
+        on_release: root.manager.current="ConfigureDevicesScreen"
 
 <AddDevice>:
     name:"AddDeviceScreen"
@@ -234,7 +240,60 @@ MyScreenManager:
         background_down: './graphic/Button/btBluecl.png'
 
 
+<RemoveDevices>:
+    name:"RemoveDevicesScreen"
+    cols: 1
+    rows: 5
 
+    Button:
+        size_hint: 0.8, None
+        text:"back"
+        #markup: True
+        background_normal: './graphic/Button/btBlue.png'
+        background_down: './graphic/Button/btBluecl.png'
+        on_release: root.manager.current = "DeviceManageScreen"
+    Label:
+        size_hint: 0.8, None
+        text:"Your devices :"
+
+
+<ConfigureDevices>:
+    name:"ConfigureDevicesScreen"
+    cols: 1
+    rows: 5
+
+    Button:
+        size_hint: 0.8, None
+        text:"back"
+        #markup: True
+        background_normal: './graphic/Button/btBlue.png'
+        background_down: './graphic/Button/btBluecl.png'
+        on_release: root.manager.current = "DeviceManageScreen"
+
+    Button:
+        size_hint: 0.8, None
+        text:"Add groups"
+        background_normal: './graphic/Button/btBlue.png'
+        background_down: './graphic/Button/btBluecl.png'
+
+    Button:
+        size_hint: 0.8, None
+        text:"Remove groups"
+        background_normal: './graphic/Button/btBlue.png'
+        background_down: './graphic/Button/btBluecl.png'
+        
+    Button:
+        size_hint: 0.8, None
+        text:"Edit groups"
+        background_normal: './graphic/Button/btBlue.png'
+        background_down: './graphic/Button/btBluecl.png'
+
+    Button:
+        size_hint: 0.8, None
+        text:"Change name lamps"
+        background_normal: './graphic/Button/btBlue.png'
+        background_down: './graphic/Button/btBluecl.png'
+      
 <AddVirilux>:
     name:"AddViriluxScreen"
     cols : 1

@@ -36,7 +36,10 @@ class AddVirilux(GridLayout, Screen):
     pass
 class AddDevice(GridLayout, Screen):
     pass
-
+class RemoveDevices(GridLayout, Screen):
+    pass
+class ConfigureDevices(GridLayout,Screen):
+    pass
 class myApp(App):  
     def build(self):
         Window.size=(480,800)# taille de l'ecran
@@ -49,6 +52,8 @@ class myApp(App):
         screen_manager.add_widget(DeviceManager(name="DeviceManageScreen"))
         screen_manager.add_widget(AddVirilux(name="AddViriluxScreen"))
         screen_manager.add_widget(AddDevice(name="AddDeviceScreen"))
+        screen_manager.add_widget(RemoveDevices(name="RemoveDevicesScreen"))
+        screen_manager.add_widget(ConfigureDevices(name="ConfigureDevicesScreen"))
 
 if __name__ == '__main__':
     myApp().run()
