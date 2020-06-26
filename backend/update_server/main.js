@@ -7,7 +7,6 @@ const DB = require("./db.js").DB;
 /* Let's initialize the database. */
 DB.start();
 
-app.use(session({ secret: "ssshhhhh", saveUninitialized: true, resave: true }));
 app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({ extended: true }));
