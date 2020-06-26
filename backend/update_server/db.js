@@ -1,4 +1,4 @@
-*
+/*
 This file is the one doing all databases interactions.
 Every CRUD should go through it.
 Be aware that if you modify this file that we MUST use SqlString.format() to prevent sql injection.
