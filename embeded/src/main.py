@@ -9,7 +9,7 @@ from kivy.graphics import Rectangle, Color
 from kivy.uix.screenmanager import ScreenManager, Screen
 class MyLayout(AnchorLayout, Screen):
     def checkLamp(self):
-        print("test print")
+        print("check lamp and close lamp")
     pass
 
 class Configuration(GridLayout ,AnchorLayout,Screen):
