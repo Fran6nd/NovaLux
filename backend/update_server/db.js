@@ -1,13 +1,8 @@
-/*
-This file is the one doing all databases interactions.
-Every CRUD should go through it.
-Be aware that if you modify this file that we MUST use SqlString.format() to prevent sql injection.
-Moreover, we use the bcrypt module to store hash of passwords... No password directly stored in DB!
-Finally, to avoid SQL injection, we use sqlString.
-*/
+/*Ce fichier est celui qui effectue toutes les interactions de bases de données.*/
+/*jshint esversion: 6 */
 
-const SqlString = require("sqlstring");
-const bcrypt = require("bcrypt");
+const  SqlString  =  require ( "sqlstring" ) ;
+const  bcrypt  =  require ( "bcrypt" ) ;
 
 class DB {
   static start() {
@@ -36,6 +31,7 @@ class DB {
   static query(request) {
     return this.connection.query(request);
   }
+<<<<<<< HEAD
   static readUser(mail, password) {
     let result = this.connection.query(
       SqlString.format("SELECT * FROM user WHERE email = ?", [mail])
@@ -114,6 +110,12 @@ class DB {
     return false;
   }
 
+=======
+
+  static Update(){
+      
+  }
+>>>>>>> update
 }
 
 module.exports.DB = DB;
