@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 import kivy
+from lamp import lamps
 from kivy.app import App
 from kivy.core.window import Window
 from kivy.uix.boxlayout import BoxLayout
@@ -7,12 +8,32 @@ from kivy.uix.anchorlayout import AnchorLayout
 from kivy.uix.gridlayout import GridLayout
 from kivy.graphics import Rectangle, Color
 from kivy.uix.screenmanager import ScreenManager, Screen
+from kivy.clock import Clock
+from functools import partial
+from threading import Thread
+import time
+
+#thread_lamp=Thread(target=lamps.checkLamp(self))   #définit la fonction a executer en arrière-plan
+
+
+def ShowLamps(self, dt):
+    lamps.checkLamp(self)
+    print("clock schedule")
+    
+#Clock.schedule_interval(partial(ShowLamps), 10.0) # appele une fonction tout les X sec
+#Clock.schedule_interval(self.ShowLamps, 5.0)
+
+
 class MyLayout(AnchorLayout, Screen):
+    #thread_lamp.start() 
     def checkLamp(self):
+    
+        lamps.checkLamp(self)
         print("check lamp and close lamp")
     pass
 
 class Configuration(GridLayout ,AnchorLayout,Screen):
+    
     pass
 
 class Information(GridLayout,Screen):
