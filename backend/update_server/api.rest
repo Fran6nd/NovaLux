@@ -1,20 +1,6 @@
-POST http://127.0.0.1:3000/public/login HTTP/1.1 content-type: application/json
-
-{
-    "email" : "gogo441@gmail.com", "password" : "gogo"
-
-} ### invalid auth POST http://127.0.0.1:3000/public/login HTTP/1.1 content-type: application/json
-
-{
-    "email" : "gogo441@gmail.com", "password" : "godsfdgo"
-
-}
-
-POST http://127.0.0.1:3000/private/logout HTTP/1.1 ### GET http://127.0.0.1:3000/ HTTP/1.1
-
 ###
 GET http://127.0.0.1:3000/register?id_hardware=HELLO%3A%3AWORLD%3A%3A441 HTTP/1.1
 ###
-GET http://127.0.0.1:3000/check_for_update HTTP/1.1
+GET http://127.0.0.1:3000/check_for_update?id_hardware=HELLO%3A%3AWORLD%3A%3A441&id_version=1.1.2c HTTP/1.1
 ###
-GET http://127.0.0.1:3000/get_update HTTP/1.1
+GET http://127.0.0.1:3000/get_update?id_hardware=HELLO%3A%3AWORLD%3A%3A441 HTTP/1.1

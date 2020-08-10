@@ -15,14 +15,13 @@ app.get('/register', function (req, res) {
 })
 
 app.get('/check_for_update', function (req, res) {
-  res.send('Hello World!')
-  console.log('req get ')
+  res.send('{available_ubdate: false}');
+  console.log('Checking for updates: ' + req.query.id_hardware + ' version: ' + req.query.id_version);
 })  
-
 
 app.get('/get_update', function (req, res) {
   res.send('Hello World!')
-  console.log('req get ')
+  console.log('Update asked from: ' + req.query.id_hardware);
 })  
 
 
