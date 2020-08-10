@@ -31,7 +31,6 @@ class DB {
   static query(request) {
     return this.connection.query(request);
   }
-<<<<<<< HEAD
   static readUser(mail, password) {
     let result = this.connection.query(
       SqlString.format("SELECT * FROM user WHERE email = ?", [mail])
@@ -110,12 +109,6 @@ class DB {
     return false;
   }
 
-=======
-
-  static Update(){
-      
-  }
->>>>>>> update
 }
 
 module.exports.DB = DB;

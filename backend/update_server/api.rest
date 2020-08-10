@@ -12,18 +12,9 @@ POST http://127.0.0.1:3000/public/login HTTP/1.1 content-type: application/json
 
 POST http://127.0.0.1:3000/private/logout HTTP/1.1 ### GET http://127.0.0.1:3000/ HTTP/1.1
 
-### GET http://127.0.0.1:3000/ezfezfe HTTP/1.1
-
-### POST http://127.0.0.1:3000/private/newUser HTTP/1.1 content-type: application/json
-
-{
-    "password" : "godsgdsgdsgo", "email": "gog441@gmail.c"
-
-}
-
-POST http://127.0.0.1:3000/public/newUser HTTP/1.1 content-type: application/json
-
-{
-    "email" : "gofdggo441@gmail.com", "password": "gogo"
-
-}
+###
+GET http://127.0.0.1:3000/register HTTP/1.1
+###
+GET http://127.0.0.1:3000/check_for_update HTTP/1.1
+###
+GET http://127.0.0.1:3000/get_update HTTP/1.1
