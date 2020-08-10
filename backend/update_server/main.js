@@ -10,7 +10,7 @@ const DB = require("./db.js").DB;
 //DB.start();
 
 app.get('/register', function (req, res) {
-  res.send('Hello World!');
+  res.send('{checking_day: 1, checking_time: 1}');
   console.log('Registering: ' + req.query.id_hardware);
 })
 
