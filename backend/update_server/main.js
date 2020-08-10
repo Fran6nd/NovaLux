@@ -10,8 +10,8 @@ const DB = require("./db.js").DB;
 //DB.start();
 
 app.get('/register', function (req, res) {
-  res.send('Hello World!')
-  console.log('req get ')
+  res.send('Hello World!');
+  console.log('Registering: ' + req.query.id_hardware);
 })
 
 app.get('/check_for_update', function (req, res) {
